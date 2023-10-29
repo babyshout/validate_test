@@ -1,6 +1,5 @@
-package com.example.validate_test.controller;
+package com.example.validate_test;
 
-import com.example.validate_test.form.PersonForm;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,12 +15,12 @@ public class WebController implements WebMvcConfigurer {
         registry.addViewController("/results").setViewName("results");
     }
 
-    @GetMapping("/")
+    @GetMapping(value = "/")
     public String showForm(PersonForm personForm) {
         return "form";
     }
 
-    @PostMapping("/")
+    @PostMapping(value = "/")
     public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "form";

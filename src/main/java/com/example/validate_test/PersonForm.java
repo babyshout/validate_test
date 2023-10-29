@@ -1,4 +1,4 @@
-package com.example.validate_test.form;
+package com.example.validate_test;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
